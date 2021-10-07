@@ -9,32 +9,46 @@
     <!--parent는 상위 view다, 따라서 이는 전체 뷰가 부모다-->
     <!--왼쪽과 오른쪽으로 위치하려다가 가운대에 위치하게 된다. -->
 
+
+    <!--체인스타일은 제일 왼쪽에 있는 걸 기준으로 정해짐-->
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-        <!--app:layout_constraintVertical_bias="0.7"
-        app:layout_constraintHorizontal_bias="0.3"/-->>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button1"
+        tools:layout_editor_absoluteY="333dp" />
 
 
-      <!--  app:layout_constraintCircle="@+id/button1"
+    <!--app:layout_constraintVertical_bias="0.7"
+    app:layout_constraintHorizontal_bias="0.3"/-->>
+
+
+    <!--  app:layout_constraintCircle="@+id/button1"
         app:layout_constraintCircleAngle="45"
         app:layout_constraintCircleRadius="200dp"
         tools:ignore="MissingConstraints"/>-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"
+    <!--app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/button1"
 
         />-->
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
